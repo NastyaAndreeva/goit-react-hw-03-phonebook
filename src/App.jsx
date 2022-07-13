@@ -104,7 +104,7 @@ export class App extends Component {
             />
           )}
         </Box>
-        <ToastContainer />
+        <ToastContainer autoClose={3000} />
       </>
     );
   }

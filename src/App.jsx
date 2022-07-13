@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { nanoid } from 'nanoid';
 import { FriendList } from 'components/FriendList';
 import { ContactForm } from 'components/ContactForm';
@@ -41,7 +43,7 @@ export class App extends Component {
     const isAlreadyAdded = this.dataValidation(data);
 
     if (isAlreadyAdded) {
-      alert(`${data.name} is already in your contacts`);
+      toast.error(`${data.name} is already in your contacts`);
       return;
     }
 
@@ -102,6 +104,7 @@ export class App extends Component {
             />
           )}
         </Box>
+        <ToastContainer />
       </>
     );
   }
